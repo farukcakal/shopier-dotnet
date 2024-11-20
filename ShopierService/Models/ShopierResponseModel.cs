@@ -84,4 +84,17 @@ public class ShopierResponseModel
             }
         }
     }
+    public static ShopierResponseModel FromDictionary(Dictionary<string, string> dictionary)
+    {
+        return new ShopierResponseModel
+        {
+            PlatformOrderId = dictionary.ContainsKey("platform_order_id") ? dictionary["platform_order_id"] : null,
+            ApiKey = dictionary.ContainsKey("API_key") ? dictionary["API_key"] : null,
+            Status = dictionary.ContainsKey("status") ? dictionary["status"] : null,
+            Installment = dictionary.ContainsKey("installment") ? int.Parse(dictionary["installment"]) : 0,
+            PaymentId = dictionary.ContainsKey("payment_id") ? int.Parse(dictionary["payment_id"]) : 0,
+            RandomNr = dictionary.ContainsKey("random_nr") ? int.Parse(dictionary["random_nr"]) : 0,
+            Signature = dictionary.ContainsKey("signature") ? dictionary["signature"] : null
+        };
+    }
 }

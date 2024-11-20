@@ -7,4 +7,8 @@
         <RootNamespace>shopier_dotnet</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ShopierService\ShopierService.csproj" />
+    </ItemGroup>
+
 </Project>
